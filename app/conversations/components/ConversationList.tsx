@@ -24,14 +24,15 @@ const ConversationList = ({
 }:ConversationListProp)=>{
     
     const{isOpen,conversationId} = useConversation() ; 
-    console.log("in conversation list", isOpen )
-    const [item,setItem]= useState(itemList)
+    
+    const [item,setItem]= useState(itemList);
+    console.log(item)
     const router = useRouter() ;
     const [isModalOpen,setisModalOpen] = useState(false); 
     const session = useSession() ; 
     const pusherKey = useMemo(()=>{
             return session?.data?.user?.email
-    },[session])
+    },[session.data?.user?.email])
     useEffect(()=>{
             if(!pusherKey){
                 return 
@@ -78,6 +79,7 @@ const ConversationList = ({
 
             }
     },[pusherKey,router,conversationId])
+    console.log(item)
 
     return (
         <>

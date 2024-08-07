@@ -4,7 +4,7 @@ import LoadingModal from "@/app/components/LoadingModal";
 import { User } from "@prisma/client";
 import axios from "axios";
 import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { useCallback, useState } from "react";
 
 interface UserListItemProp{
     user:User
@@ -15,12 +15,18 @@ const UserListItem = ({
 }:UserListItemProp) => {
     const router = useRouter() ; 
     const [loading,setisLoading] = useState(false)
-    const handleClick = ()=>{
-        setisLoading(true)
-        axios.post(`/api/conversations`,{
-            userId:user.id
-        }).then(()=>router.push(`/conversations`)).finally(()=>setisLoading(false))
-    }
+    const handleClick = useCallback(() => {
+        setisLoading(true);
+    
+        axios.post('/api/conversations', { 
+          userId: user.id
+        })
+        .then((data) => {
+          router.push(`/conversations`);
+        })
+        .finally(() => setisLoading(false));
+      }, [user, router]);
+    
     return (  <>
     { loading && (
     <LoadingModal/>
