@@ -22,7 +22,7 @@ const UserListItem = ({
           userId: user.id
         })
         .then((data) => {
-          router.push(`/conversations`);
+          router.push(`/conversations/${data.data.id}`);
         })
         .finally(() => setisLoading(false));
       }, [user, router]);
