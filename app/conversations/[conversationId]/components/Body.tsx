@@ -63,7 +63,7 @@ const Body = ({
         <div className="flex-1 overflow-y-auto">
             {
                 messages.map((message,i)=>(
-                    <MessageBox isLast = {i=== messages.length-1} id={message.id} data = {message}/>
+                    <MessageBox   key={message.id} isLast = {i=== messages.length-1} id={message.id} data = {message}/>
                 ))
 
             }
