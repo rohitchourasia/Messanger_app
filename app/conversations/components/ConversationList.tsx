@@ -61,6 +61,7 @@ const ConversationList = ({
                 );
               };
             const removeHandler= (conversation:FullConversationaType)=>{
+                console.log("Rmeove event called",conversation)
                 setItem((current)=>{
                     return [...current.filter((convo)=>convo.id!== conversation.id)]
                 })
