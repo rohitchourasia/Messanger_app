@@ -71,7 +71,7 @@ const ProfileDrawer = ({
                                         flex-col overflow-y-scroll bg-white py-6 shadow-xl">
                                             <div className="px-4 sm:px-6">
                                                 <div className="flex items-start justify-end">
-                                                    <div className="ml-3 flex h-7 items-center">
+                                                    <div className="ml-3 flex h-7 items-center ">
                                                         <button type="button" onClick={onClose} className="rounded-md
                                                         bg-white
                                                         text-gray-400

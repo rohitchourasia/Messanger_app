@@ -24,7 +24,7 @@ const MobileFooter = ({
         <>
         <SettingModal currentuser={currentuser} isSettingOpen={isOpenModal} onClose={()=>setisOpenModal(false)}/>
     <div className="lg:hidden  fixed flex justify-between w-full bottom-0 z-40 items-center border-t-[1px]">
-             <nav className="mt-4 flex flex-col justify-between items-center ">
+             <nav className="mt-4 flex flex-col justify-between items-center  ">
                     <div onClick={()=>{
                         setisOpenModal(true)
                     }} className="cursor pointer hover:opacity-70 transition">

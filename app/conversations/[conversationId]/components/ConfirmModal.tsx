@@ -48,7 +48,7 @@ const ConfirmModal = ({
                     </div>
 
             </div>
-            <div className="mt-5 sm:mt-4 sm:flex sm:flex-row-reverse">
+            <div className="mt-5 sm:mt-4 flex  justify-center gap-x-8 ">
                 <Button onClick={onDelete} danger  disabled={loading} >
                     Delete
                 </Button>

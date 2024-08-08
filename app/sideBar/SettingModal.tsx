@@ -89,7 +89,7 @@ const SettingModal = ({
                             </div>
                         </div>
                     </div>
-                    <div className= " mt-6 flex items-center justify-end">
+                    <div className= " mt-6 flex items-center justify-end gap-x-5">
                         <Button secondary disabled={isLoading} onClick={onClose} type="button">
                             Cancel
                         </Button>

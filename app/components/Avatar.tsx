@@ -15,12 +15,12 @@ const Avatar = ({
 
     },[isActive])
     return ( <>
-    <div className="relative">
-        <div className="relative inline-block rounded-full w-9 h-9 overflow-hidden md:h-11 md:w-11">
+    <div className="relative  ">
+        <div className="relative inline-block rounded-full w-11 h-11 overflow-hidden md:h-11 md:w-11">
             <Image alt="Avatar" src={currentuser?.image || "/Image/user.png"} fill/>
         </div>
         {isActive && (
-        <span className = {"absolute block rounded-full bg-green-500 top-0 right-0 h-23 w-2 md:h-3 md:w-3"}/>
+        <span className = {"absolute block rounded-full bg-green-500 bottom-0 right-0 h-3 w-3  "}/>
 
 )    }
     </div>
