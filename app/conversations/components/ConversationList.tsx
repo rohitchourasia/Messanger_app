@@ -76,6 +76,7 @@ const ConversationList = ({
                 pusherClient.unsubscribe(pusherKey)
                 pusherClient.unbind('conversation:new',eventhandler)
                 pusherClient.unbind('conversation:update',updateEventHandler)
+                pusherClient.unbind('conversation:remove',removeHandler) ;
 
             }
     },[pusherKey,router,conversationId])
