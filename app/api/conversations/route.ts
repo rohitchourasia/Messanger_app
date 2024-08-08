@@ -43,11 +43,13 @@ export async function POST( req:Request) {
                     }
                 
             })
-            newGroupConversation.users.forEach((user)=>{
-                if(user.email){
-                    pusherServer.trigger(user.email,'conversation:new',newGroupConversation)
-                }
-            })
+            await Promise.all(
+                newGroupConversation.users.map(async (user) => {
+                    if (user.email) {
+                        await pusherServer.trigger(user.email, 'conversation:new', newGroupConversation);
+                    }
+                })
+            );
             return NextResponse.json(newGroupConversation)
         }
         const existingUser = await prisma.conversation.findMany({

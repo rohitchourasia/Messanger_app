@@ -36,7 +36,7 @@ export async function DELETE(req:Request , {params}:{params:Iparam}){
 
 
         })
-        exisitingConversation.users.forEach(async (user)=>{
+         exisitingConversation.users.forEach(async (user)=>{
             if(user.email){
                 await  pusherServer.trigger(user.email,'conversation:remove',exisitingConversation)
             }
