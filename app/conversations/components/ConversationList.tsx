@@ -38,6 +38,7 @@ const ConversationList = ({
                 return 
             }
             const eventhandler= (conversation:FullConversationaType)=>{
+                console.log("new event got called",conversation)
                 setItem((current)=>{
                     if(find(current,{id:conversation.id})){
                         return current 
